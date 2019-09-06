@@ -31,6 +31,7 @@
 		68875E8D23220E5C003A0CA0 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68875E7E23220E5C003A0CA0 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		68875E8E23220E5C003A0CA0 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68875E7F23220E5C003A0CA0 /* TencentOpenAPI.framework */; };
 		68875E8F23220E5C003A0CA0 /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68875E8123220E5C003A0CA0 /* libUMSocialLog.a */; };
+		68875E912322339D003A0CA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 68875E902322339D003A0CA0 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		68875E7E23220E5C003A0CA0 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		68875E7F23220E5C003A0CA0 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		68875E8123220E5C003A0CA0 /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
+		68875E902322339D003A0CA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				68875E3023220DDD003A0CA0 /* LaunchScreen.storyboard */,
 				68875E3323220DDD003A0CA0 /* Info.plist */,
 				68875E3423220DDD003A0CA0 /* main.m */,
+				68875E902322339D003A0CA0 /* README.md */,
 				68875E5D23220E5C003A0CA0 /* sdk */,
 			);
 			path = KJShareDemo;
@@ -427,6 +430,7 @@
 				68875E2F23220DDD003A0CA0 /* Assets.xcassets in Resources */,
 				68875E5B23220DFC003A0CA0 /* KJShareImage.bundle in Resources */,
 				68875E8A23220E5C003A0CA0 /* WeiboSDK.bundle in Resources */,
+				68875E912322339D003A0CA0 /* README.md in Resources */,
 				68875E8723220E5C003A0CA0 /* README.txt in Resources */,
 				68875E2D23220DDB003A0CA0 /* Main.storyboard in Resources */,
 			);
