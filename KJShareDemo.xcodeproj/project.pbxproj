@@ -32,6 +32,9 @@
 		68875E8E23220E5C003A0CA0 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68875E7F23220E5C003A0CA0 /* TencentOpenAPI.framework */; };
 		68875E8F23220E5C003A0CA0 /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68875E8123220E5C003A0CA0 /* libUMSocialLog.a */; };
 		68875E912322339D003A0CA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 68875E902322339D003A0CA0 /* README.md */; };
+		68B615AEB05451FFFBD6A12B /* Pods_KJShareDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A343DC200AF613B3133CA343 /* Pods_KJShareDemoTests.framework */; };
+		C0E1D2B3E0812D89310EF5C3 /* Pods_KJShareDemo_KJShareDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2234448E8818CC4121E4DCD0 /* Pods_KJShareDemo_KJShareDemoUITests.framework */; };
+		E52381364E3BE7330CAC9FEF /* Pods_KJShareDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46427A01A4A346943F88E7F4 /* Pods_KJShareDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2234448E8818CC4121E4DCD0 /* Pods_KJShareDemo_KJShareDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KJShareDemo_KJShareDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46427A01A4A346943F88E7F4 /* Pods_KJShareDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KJShareDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68875E2223220DDB003A0CA0 /* KJShareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJShareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68875E2523220DDB003A0CA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		68875E2623220DDB003A0CA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +102,13 @@
 		68875E7F23220E5C003A0CA0 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		68875E8123220E5C003A0CA0 /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
 		68875E902322339D003A0CA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		76F2815B751BCF13AE355883 /* Pods-KJShareDemo-KJShareDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJShareDemo-KJShareDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-KJShareDemo-KJShareDemoUITests/Pods-KJShareDemo-KJShareDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		796EAE807E080E723B0BAE79 /* Pods-KJShareDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJShareDemo.debug.xcconfig"; path = "Target Support Files/Pods-KJShareDemo/Pods-KJShareDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9D32EB9AD618FF3A53184BBB /* Pods-KJShareDemo-KJShareDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJShareDemo-KJShareDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-KJShareDemo-KJShareDemoUITests/Pods-KJShareDemo-KJShareDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A343DC200AF613B3133CA343 /* Pods_KJShareDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KJShareDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C203CA85AE6350FD32046879 /* Pods-KJShareDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJShareDemoTests.release.xcconfig"; path = "Target Support Files/Pods-KJShareDemoTests/Pods-KJShareDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C22E971777D327148840ACC3 /* Pods-KJShareDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJShareDemo.release.xcconfig"; path = "Target Support Files/Pods-KJShareDemo/Pods-KJShareDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D6AA2B3E3EA0AF6226ECAF0A /* Pods-KJShareDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJShareDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-KJShareDemoTests/Pods-KJShareDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +126,7 @@
 				68875E8823220E5C003A0CA0 /* libWeChatSDK.a in Frameworks */,
 				68875E8923220E5C003A0CA0 /* libSocialSina.a in Frameworks */,
 				68875E8F23220E5C003A0CA0 /* libUMSocialLog.a in Frameworks */,
+				E52381364E3BE7330CAC9FEF /* Pods_KJShareDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B615AEB05451FFFBD6A12B /* Pods_KJShareDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E1D2B3E0812D89310EF5C3 /* Pods_KJShareDemo_KJShareDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +156,8 @@
 				68875E3D23220DDD003A0CA0 /* KJShareDemoTests */,
 				68875E4823220DDD003A0CA0 /* KJShareDemoUITests */,
 				68875E2323220DDB003A0CA0 /* Products */,
+				A3774080251E1B48E306CF2E /* Pods */,
+				DD9131C5640A39B4C787A10D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -321,6 +338,30 @@
 			path = UMSocialSDKPlugin;
 			sourceTree = "<group>";
 		};
+		A3774080251E1B48E306CF2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				796EAE807E080E723B0BAE79 /* Pods-KJShareDemo.debug.xcconfig */,
+				C22E971777D327148840ACC3 /* Pods-KJShareDemo.release.xcconfig */,
+				76F2815B751BCF13AE355883 /* Pods-KJShareDemo-KJShareDemoUITests.debug.xcconfig */,
+				9D32EB9AD618FF3A53184BBB /* Pods-KJShareDemo-KJShareDemoUITests.release.xcconfig */,
+				D6AA2B3E3EA0AF6226ECAF0A /* Pods-KJShareDemoTests.debug.xcconfig */,
+				C203CA85AE6350FD32046879 /* Pods-KJShareDemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD9131C5640A39B4C787A10D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46427A01A4A346943F88E7F4 /* Pods_KJShareDemo.framework */,
+				2234448E8818CC4121E4DCD0 /* Pods_KJShareDemo_KJShareDemoUITests.framework */,
+				A343DC200AF613B3133CA343 /* Pods_KJShareDemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -328,9 +369,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68875E4E23220DDD003A0CA0 /* Build configuration list for PBXNativeTarget "KJShareDemo" */;
 			buildPhases = (
+				91329245FEECB427E3051F32 /* [CP] Check Pods Manifest.lock */,
 				68875E1E23220DDB003A0CA0 /* Sources */,
 				68875E1F23220DDB003A0CA0 /* Frameworks */,
 				68875E2023220DDB003A0CA0 /* Resources */,
+				689625F79188164BBDFFEB7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,6 +388,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68875E5123220DDD003A0CA0 /* Build configuration list for PBXNativeTarget "KJShareDemoTests" */;
 			buildPhases = (
+				20AC7F9ED6165C39C85830EE /* [CP] Check Pods Manifest.lock */,
 				68875E3623220DDD003A0CA0 /* Sources */,
 				68875E3723220DDD003A0CA0 /* Frameworks */,
 				68875E3823220DDD003A0CA0 /* Resources */,
@@ -363,9 +407,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68875E5423220DDD003A0CA0 /* Build configuration list for PBXNativeTarget "KJShareDemoUITests" */;
 			buildPhases = (
+				1A407BFC86FCDBB2805B0626 /* [CP] Check Pods Manifest.lock */,
 				68875E4123220DDD003A0CA0 /* Sources */,
 				68875E4223220DDD003A0CA0 /* Frameworks */,
 				68875E4323220DDD003A0CA0 /* Resources */,
+				0592CA88825F99F8751D9ABF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -451,6 +497,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0592CA88825F99F8751D9ABF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KJShareDemo-KJShareDemoUITests/Pods-KJShareDemo-KJShareDemoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KJShareDemo-KJShareDemoUITests/Pods-KJShareDemo-KJShareDemoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KJShareDemo-KJShareDemoUITests/Pods-KJShareDemo-KJShareDemoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A407BFC86FCDBB2805B0626 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KJShareDemo-KJShareDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20AC7F9ED6165C39C85830EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KJShareDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		689625F79188164BBDFFEB7D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KJShareDemo/Pods-KJShareDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KJShareDemo/Pods-KJShareDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KJShareDemo/Pods-KJShareDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91329245FEECB427E3051F32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KJShareDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		68875E1E23220DDB003A0CA0 /* Sources */ = {
@@ -629,6 +778,7 @@
 		};
 		68875E4F23220DDD003A0CA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 796EAE807E080E723B0BAE79 /* Pods-KJShareDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -661,6 +811,7 @@
 		};
 		68875E5023220DDD003A0CA0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C22E971777D327148840ACC3 /* Pods-KJShareDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -693,6 +844,7 @@
 		};
 		68875E5223220DDD003A0CA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6AA2B3E3EA0AF6226ECAF0A /* Pods-KJShareDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -711,6 +863,7 @@
 		};
 		68875E5323220DDD003A0CA0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C203CA85AE6350FD32046879 /* Pods-KJShareDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -729,6 +882,7 @@
 		};
 		68875E5523220DDD003A0CA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76F2815B751BCF13AE355883 /* Pods-KJShareDemo-KJShareDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KJShareDemoUITests/Info.plist;
@@ -746,6 +900,7 @@
 		};
 		68875E5623220DDD003A0CA0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D32EB9AD618FF3A53184BBB /* Pods-KJShareDemo-KJShareDemoUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KJShareDemoUITests/Info.plist;

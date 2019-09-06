@@ -1,0 +1,39 @@
+PODS:
+  - UMCAnalytics (6.0.5):
+    - UMCCommon
+  - UMCCommon (2.1.1)
+  - UMCSecurityPlugins (1.0.6)
+  - UMengUShare/Core (6.4.8.2):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.8.2)
+  - UMengUShare/Social/ReducedQQ (6.4.8.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.8.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.8.2):
+    - UMengUShare/Core
+
+DEPENDENCIES:
+  - UMCAnalytics
+  - UMCCommon
+  - UMCSecurityPlugins
+  - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedSina
+  - UMengUShare/Social/ReducedWeChat
+
+SPEC REPOS:
+  trunk:
+    - UMCAnalytics
+    - UMCCommon
+    - UMCSecurityPlugins
+    - UMengUShare
+
+SPEC CHECKSUMS:
+  UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
+  UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
+
+PODFILE CHECKSUM: a42ae2aaa1810968d7e8b40e5ffe65f474828610
+
+COCOAPODS: 1.8.0.beta.1
