@@ -69,6 +69,27 @@
 /// QQ分享之后的回调地址
 #define SHAREURL      @"http://mobile.umeng.com/social"
 
+NS_ASSUME_NONNULL_BEGIN
+
+/// 分享小程序path
+typedef NS_ENUM(NSInteger, KJShareViewSharePathType) {
+    KJShareViewSharePathTypeZQRZDetail = 0, /// 债权产品详情
+    KJShareViewSharePathTypeGQRZDetail = 1, /// 股权详情
+    KJShareViewSharePathTypeZJDetail   = 2, /// 中介详情
+    KJShareViewSharePathTypeCYZC       = 3, /// 产业政策
+    KJShareViewSharePathTypeZCSBDetail = 4, /// 政策申报详情
+    KJShareViewSharePathTypeACTDetail  = 5, /// 活动报名详情
+};
+/// 枚举映射字符串
+static NSString * const _Nonnull KJShareViewSharePathTypeStringMap[] = {
+    [KJShareViewSharePathTypeZQRZDetail] = @"pages/zqrz/detail/zqrzDetail?id=*****id*****",
+    [KJShareViewSharePathTypeGQRZDetail] = @"pages/gqrz/detail/gqrzDetail?id=*****id*****",
+    [KJShareViewSharePathTypeZJDetail]   = @"pages/zjservice/detail/zjDetail?id=*****id*****",
+    [KJShareViewSharePathTypeCYZC]       = @"pages/zcsb/detail/cyzc",
+    [KJShareViewSharePathTypeZCSBDetail] = @"pages/zcsb/detail/cyzcdetail?id=*****id*****",
+    [KJShareViewSharePathTypeACTDetail]  = @"pages/activity/detail/actDetail?id=*****id*****",
+};
+
 /// 分享消息类型
 typedef NS_ENUM(NSInteger, KJShareViewContentType) {
     KJShareViewContentTypeText = 0, /// 文本消息
@@ -78,12 +99,11 @@ typedef NS_ENUM(NSInteger, KJShareViewContentType) {
     KJShareViewContentTypeWebpage,  /// 网页消息
     KJShareViewContentTypeMiniProgram,/// 微信小程序
 };
-
 /// 分享平台
 typedef NS_ENUM(NSInteger, KJShareViewPlatformType) {
     KJShareViewPlatformTypeWeChatSession = 0, /// 微信聊天
     KJShareViewPlatformTypeWechatTimeLine,/// 朋友圈
-    KJShareViewPlatformTypeSina, /// 新浪微博
+    KJShareViewPlatformTypeSina,  /// 新浪微博
     KJShareViewPlatformTypeQQ,    /// QQ好友
     KJShareViewPlatformTypeQzone, /// QQ空间
 };
@@ -94,7 +114,7 @@ typedef void(^KJShareCompleteBlock)(id data, NSError *error);
 #pragma mark - 友盟第三方
 + (UMSocialManager*)kj_UMSocialManger;
 // 初始化
-+ (instancetype)createShareView:(void(^)(KJShareView *obj))block;
++ (instancetype)createShareView:(void(^_Nullable)(KJShareView *obj))block;
 // 保存父视图控制器
 @property(nonatomic,weak,readonly) KJShareView *(^VC)(UIViewController*);
 
@@ -103,14 +123,15 @@ typedef void(^KJShareCompleteBlock)(id data, NSError *error);
 /** 分享消息体 */
 @property (nonatomic, strong) UMSocialMessageObject *messageObject;
 /// 分享之后的回调
-@property (nonatomic, strong) KJShareCompleteBlock kj_completeBlock;
+@property (nonatomic, weak) KJShareCompleteBlock kj_completeBlock;
 
 /** 分享消息 type：消息类型  block：分享回调 */
 - (void)shareWithContentType:(KJShareViewContentType)type CompleteBlock:(KJShareCompleteBlock)block;
 
 #pragma mark - 分享的基本参数
+- (void)kj_customWithTitle:(NSString*)title Descr:(NSString*)descr ThumbImage:(id)thumbImage;
 /** 标题 标题的长度依各个平台的要求而定 */
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy, readwrite) NSString *title;
 /** 描述内容的长度依各个平台的要求而定 */
 @property (nonatomic, copy) NSString *descr;
 /** 缩略图 UIImage或者NSData类型或者NSString类型（图片url）*/
@@ -120,17 +141,17 @@ typedef void(^KJShareCompleteBlock)(id data, NSError *error);
 /** 图片内容 （可以是UIImage类对象，也可以是NSdata类对象，也可以是图片链接imageUrl NSString类对象）
  * @note 图片大小根据各个平台限制而定
  */
-@property (nonatomic, retain) id shareImage;
+@property (nonatomic, strong) id shareImage;
 
 #pragma mark - 分享音乐
 /** 音乐网页的url地址 长度不能超过10K */
-@property (nonatomic, retain) NSString *musicUrl;
+@property (nonatomic, strong) NSString *musicUrl;
 /** 音乐lowband网页的url地址 长度不能超过10K */
-@property (nonatomic, retain) NSString *musicLowBandUrl;
+@property (nonatomic, strong) NSString *musicLowBandUrl;
 /** 音乐数据url地址 长度不能超过10K */
-@property (nonatomic, retain) NSString *musicDataUrl;
+@property (nonatomic, strong) NSString *musicDataUrl;
 /**音乐lowband数据url地址 长度不能超过10K */
-@property (nonatomic, retain) NSString *musicLowBandDataUrl;
+@property (nonatomic, strong) NSString *musicLowBandDataUrl;
 
 #pragma mark - 分享视频
 /** 视频网页的url 不能为空且长度不能超过255 */
@@ -147,17 +168,23 @@ typedef void(^KJShareCompleteBlock)(id data, NSError *error);
 @property (nonatomic, retain) NSString *webpageUrl;
 
 #pragma mark - 小程序相关参数
+- (void)kj_miniProgramWithHdWebpageUrl:(NSString*)hdWebpageUrl UserName:(NSString * _Nullable)userName Path:(NSString * _Nullable)path HdImage:(id)hdImage WithShareTicket:(BOOL)withShareTicket;
 /** 低版本微信网页链接 */
 @property (nonatomic, strong) NSString *hdWebpageUrl;
 /** 小程序username */
 @property (nonatomic, strong) NSString *userName;
 /** 小程序页面的路径 */
 @property (nonatomic, strong) NSString *path;
-/** 小程序新版本的预览图 128k */
-@property (nonatomic, strong) NSData *hdImageData;
+/** 小程序新版本的预览图链接地址 128k 支持 UIImage和NSString */
+@property (nonatomic, strong) id hdImage;
 /** 是否使用带 shareTicket 的转发 */
 @property (nonatomic, assign) BOOL withShareTicket;
 
+#pragma mark - 项目特殊参数
+/** 小程序相关的ID */
+@property (nonatomic, strong) NSString *correlationID;
+/** 分享小程序path */
+@property (nonatomic, assign) KJShareViewSharePathType pathType;
 
 #pragma mark - ThirdTools
 /// 三方检测，查看手机是否安装以下应用
@@ -168,5 +195,9 @@ typedef void(^KJShareCompleteBlock)(id data, NSError *error);
 // 登录
 + (void)kj_ThirdPartyLogin:(UMSocialPlatformType)platformName vc:(UIViewController *)vc completion:(void(^)(id result,NSError *error))completion;
 
+/// 压缩图片到指定大小
++ (NSData *)kj_zipScaleImage:(UIImage *)image Kb:(NSInteger)kb;
+
 @end
 
+NS_ASSUME_NONNULL_END

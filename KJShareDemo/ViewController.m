@@ -38,14 +38,18 @@
 
 - (IBAction)Action2:(id)sender {
     /// 第二种使用方法
-    KJShareView *shareView2 = [KJShareView createShareView:nil];
-    shareView2.title = @"标题";
-    shareView2.descr = @"小标题";
-    shareView2.webpageUrl = @"www.baidu.com";
+    KJShareView *shareView = [KJShareView createShareView:nil];
     /// 设置分享平台
-    shareView2.platformTemps = @[@(KJShareViewPlatformTypeWeChatSession),@(KJShareViewPlatformTypeWechatTimeLine)];
-    [shareView2 shareWithContentType:(KJShareViewContentTypeWebpage) CompleteBlock:^(id data, NSError *error) {
-        
+    shareView.platformTemps = @[@(KJShareViewPlatformTypeWeChatSession),@(KJShareViewPlatformTypeWechatTimeLine)];
+    shareView.title = @"标题";
+    shareView.descr = @"小标题";
+    shareView.hdImage = shareView.thumbImage = @"图片";
+    shareView.hdWebpageUrl = @"www.baidu.com";
+    shareView.correlationID = @"123";
+    shareView.pathType = KJShareViewSharePathTypeZQRZDetail;
+    [shareView shareWithContentType:(KJShareViewContentTypeMiniProgram) CompleteBlock:^(id data, NSError *error) {
+        NSString *msg = error == nil ? @"分享成功" : @"分享失败";
+//        [MBProgressHUD showMessage:msg];
     }];
 }
 
