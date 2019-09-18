@@ -123,7 +123,7 @@ typedef void(^KJShareCompleteBlock)(id data, NSError *error);
 /** 分享消息体 */
 @property (nonatomic, strong) UMSocialMessageObject *messageObject;
 /// 分享之后的回调
-@property (nonatomic, weak) KJShareCompleteBlock kj_completeBlock;
+@property (nonatomic, strong) KJShareCompleteBlock kj_completeBlock;
 
 /** 分享消息 type：消息类型  block：分享回调 */
 - (void)shareWithContentType:(KJShareViewContentType)type CompleteBlock:(KJShareCompleteBlock)block;

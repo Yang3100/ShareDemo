@@ -119,3 +119,8 @@ shareView.pathType = KJShareViewSharePathTypeZQRZDetail;
     NSString *msg = error == nil ? @"分享成功" : @"分享失败";
 }];
 ```
+#### 绑定小程序
+<p align="left">
+  <img width="400" src="Res/WX20190910-152454@2x.png" hspace="30px" />
+    <img width="400" src="Res/屏幕快照 2019-09-10 15.26.22.png" hspace="30px" />
+</p>
