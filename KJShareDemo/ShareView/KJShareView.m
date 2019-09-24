@@ -21,26 +21,27 @@
 @end
 
 @implementation KJShareView
+static dispatch_semaphore_t semaphore; /* 创建一个信号量 */
 
-+ (KJShareView*)sharedSingleton{
-    static KJShareView *sharedSingleton;
-    @synchronized(self){
-        if (!sharedSingleton){
-            sharedSingleton = [[KJShareView alloc] init];
-        }
-        return sharedSingleton;
-    }
-}
+//+ (KJShareView*)sharedSingleton{
+//    static KJShareView *sharedSingleton;
+//    @synchronized(self){
+//        if (!sharedSingleton){
+//            sharedSingleton = [[KJShareView alloc] init];
+//        }
+//        return sharedSingleton;
+//    }
+//}
 
 #pragma mark - 友盟第三方
 + (UMSocialManager*)kj_UMSocialManger{
     /* 打开调试日志 */
 #ifdef DEBUG
     [[UMSocialManager defaultManager] openLog:NO];
-    //    [UMConfigure setLogEnabled:YES];
+//    [UMConfigure setLogEnabled:YES];
 #else
     [[UMSocialManager defaultManager] openLog:NO];
-    //    [UMConfigure setLogEnabled:NO];
+//    [UMConfigure setLogEnabled:NO];
 #endif
     UMSocialManager *_manger = [UMSocialManager defaultManager];
     //设置友盟appkey
@@ -49,8 +50,8 @@
     [_manger setPlaform:UMSocialPlatformType_WechatSession appKey:WXPayAPPID appSecret:WXAPPSERCET redirectURL:SHAREURL];
     // U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
     [_manger setPlaform:UMSocialPlatformType_QQ appKey:QQAPPKEY appSecret:QQAPPSERCET redirectURL:SHAREURL];
-    //    //设置新浪的appKey和appSecret
-    //    [_manger setPlaform:UMSocialPlatformType_Sina appKey:WBAPPKEY appSecret:WBAPPSERCET redirectURL:REDIRECTURL];
+    //设置新浪的appKey和appSecret
+    [_manger setPlaform:UMSocialPlatformType_Sina appKey:WBAPPKEY appSecret:WBAPPSERCET redirectURL:REDIRECTURL];
     
     return _manger;
 }
@@ -62,7 +63,7 @@
                            ];
 }
 
-+ (instancetype)createShareView:(void(^)(KJShareView *obj))block{
++ (instancetype)createShareView:(void(^_Nullable)(KJShareView *obj))block{
     KJShareView *backView = [[KJShareView alloc] initWithFrame:CGRectMake(0, 0, SHARE_SCREEN_WIDTH, SHARE_SCREEN_HEIGHT)];
     backView.alpha = 0;
     backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
@@ -79,15 +80,15 @@
         backView.alpha = 1;
     }];
     
-    //    int64_t delayInSeconds = 0.2; // 延迟的时间
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    // 变大抖动动画
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    animation.duration = 0.2;
-    animation.keyTimes = @[@0,@0.5,@0.6,@0.7,@0.8,@0.9,@1];
-    animation.values = @[@0,@1.04,@0.97,@1.02,@0.98,@1.01,@1];
-    [backView.whiteBackView.layer addAnimation:animation forKey:@"transform.scale"];
-    //    });
+//    int64_t delayInSeconds = 0.2; // 延迟的时间
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 变大抖动动画
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+        animation.duration = 0.2;
+        animation.keyTimes = @[@0,@0.5,@0.6,@0.7,@0.8,@0.9,@1];
+        animation.values = @[@0,@1.04,@0.97,@1.02,@0.98,@1.01,@1];
+        [backView.whiteBackView.layer addAnimation:animation forKey:@"transform.scale"];
+//    });
     
     return backView;
 }
@@ -111,7 +112,7 @@
         self.whiteHeight = (110)*2 + (44);
     }
     
-    //    UILabel *lab = InsertLabel(self.whiteBackView, CGRectMake(0, 0, SHARE_SCREEN_WIDTH, 44), NSTextAlignmentCenter, @"请选择分享平台", SystemFontSize(16), SHARE_COLOR_HEXA(0x666666,1));
+//    UILabel *lab = InsertLabel(self.whiteBackView, CGRectMake(0, 0, SHARE_SCREEN_WIDTH, 44), NSTextAlignmentCenter, @"请选择分享平台", SystemFontSize(16), SHARE_COLOR_HEXA(0x666666,1));
     UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, SHARE_SCREEN_WIDTH, 44)];
     lab.backgroundColor = SHARE_COLOR_HEXA(0xF4F4F4, 1);
     lab.textColor = SHARE_COLOR_HEXA(0x666666,1);
@@ -218,7 +219,7 @@
 - (void)customSharePlatform:(UMSocialPlatformType)platfroms{
     __weak typeof(self) weakself = self;
     if (self.messageObject == nil) {
-        UMSocialMessageObject *messageObject;
+        __block UMSocialMessageObject *messageObject;
         switch (self.contentType) {
             case KJShareViewContentTypeMiniProgram: /// 小程序
                 messageObject = platfroms == UMSocialPlatformType_WechatSession ? [self kj_shareMiniProgram] : [self kj_shareWebpage];
@@ -280,15 +281,14 @@
     UMSocialMessageObject  *messageObject = [UMSocialMessageObject messageObject];
     UMShareMiniProgramObject *shareObject = [UMShareMiniProgramObject shareObjectWithTitle:self.title descr:self.descr thumImage:self.thumbImage];
     shareObject.webpageUrl = self.hdWebpageUrl;//@"兼容微信低版本网页地址";
-    shareObject.userName = self.userName ?: @"gh_19aeba931b99";;//@"小程序username，如 gh_3ac2059ac66f";
+    shareObject.userName = self.userName ?: SHARE_MINIPROGRAM_USERNAME;//@"小程序username，如 gh_3ac2059ac66f";
     shareObject.path = self.path;//@"小程序页面路径，如 pages/page10007/page10007";
-    /** 小程序新版本的预览图 128k */
-    shareObject.hdImageData = self.hdImage;
-#ifdef DEBUG
-    shareObject.miniProgramType = UShareWXMiniProgramTypeTest;
-#else
+    shareObject.hdImageData = self.hdImage;/** 小程序新版本的预览图 128k */
+//#ifdef DEBUG
+//    shareObject.miniProgramType = UShareWXMiniProgramTypeTest;
+//#else
     shareObject.miniProgramType = UShareWXMiniProgramTypeRelease; // 可选体验版和开发板
-#endif
+//#endif
     messageObject.shareObject = shareObject;
     return messageObject;
 }
@@ -333,18 +333,25 @@
 - (void)setHdImage:(id)hdImage{
     if ([hdImage isKindOfClass:[NSString class]]) {
         _hdImage = [NSData dataWithContentsOfURL:[NSURL URLWithString:kImageWithUrlString(hdImage)]];
+        NSLog(@"小程序新版本的预览图原始大小:%lu",(unsigned long)((NSData*)_hdImage).length);
         UIImage *image = [UIImage imageWithData:_hdImage];
-        _hdImage = [KJShareView kj_zipScaleImage:image Kb:127];
+        kGCD_QUEUE_ASYNC(^{
+            self->_hdImage = [KJShareView kj_zipScaleImage:image Kb:127];
+        });
     }else if ([hdImage isKindOfClass:[NSData class]]) {
         UIImage *image = [UIImage imageWithData:hdImage];
-        _hdImage = [KJShareView kj_zipScaleImage:image Kb:127];
+        kGCD_QUEUE_ASYNC(^{
+            self->_hdImage = [KJShareView kj_zipScaleImage:image Kb:127];
+        });
     }else if ([hdImage isKindOfClass:[UIImage class]]) {
-        _hdImage = [KJShareView kj_zipScaleImage:hdImage Kb:127];
+        kGCD_QUEUE_ASYNC(^{
+            self->_hdImage = [KJShareView kj_zipScaleImage:hdImage Kb:127];
+        });
     }else{
         //[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"]];
         _hdImage = UIImageJPEGRepresentation(kAppIcon,1.0f);
     }
-    NSLog(@"length = %ld",((NSData*)hdImage).length);
+    
 }
 - (void)setHdWebpageUrl:(NSString *)hdWebpageUrl{
     self.webpageUrl = _hdWebpageUrl = hdWebpageUrl;

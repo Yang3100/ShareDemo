@@ -69,6 +69,9 @@
 /// QQ分享之后的回调地址
 #define SHAREURL      @"http://mobile.umeng.com/social"
 
+/// 小程序的UserName
+#define SHARE_MINIPROGRAM_USERNAME  @""
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// 分享小程序path
